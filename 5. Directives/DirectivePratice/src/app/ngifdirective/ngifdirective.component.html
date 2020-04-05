@@ -1,0 +1,22 @@
+<b>ngif directive working</b><br/><hr/>
+<input type="radio" name="genderGrp" checked (click) = "onchange(true)"/>Male
+<input type="radio" name="genderGrp" (click) = "onchange(false)"/>Female
+<div *ngIf="IsValid">
+    I am male
+</div>
+<div *ngIf="!IsValid">
+    I am female
+</div>
+<br/>
+<hr/>
+<b>ngif directive complie code working</b><br/><hr/>
+<ng-template [ngIf] = "IsValid">
+    <div>
+        I m male
+    </div>
+</ng-template>
+<ng-template [ngIf] = "!IsValid">
+    <div>
+        I m female
+    </div>
+</ng-template>

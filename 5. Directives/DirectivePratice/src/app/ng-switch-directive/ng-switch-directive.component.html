@@ -1,0 +1,31 @@
+<p>ng-switch-directive works!</p><br/><hr/>
+<!-- <div [ngSwitch]="Name">
+    <div *ngSwitchCase="'Suhail'">Hello {{Name}}</div>
+    <div *ngSwitchCase="'Imran'">Hello {{Name}}</div>
+    <div *ngSwitchCase="'Muneeb'">Hello {{Name}}</div>
+    <div *ngSwitchDefault>No Data Found</div>
+</div> -->
+
+<!-- Compile Code -->
+
+<!-- <div [ngSwitch]="Name">
+    <ng-template [ngSwitchCase]="'Suhail'">
+        <div>Hello {{Name}}</div>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'Imran'">
+        <div>Hello {{Name}}</div>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'Muneeb'">
+        <div>Hello {{Name}}</div>
+    </ng-template>
+    <ng-template ngSwitchDefault]>
+        <div>Hello {{Name}}</div>
+    </ng-template>
+</div> -->
+<!-- interpolation also works<div ngSwitch="{{emp.Id%2}}"></div> -->
+<div *ngFor="let emp of Employee">
+    <div [ngSwitch]="emp.Id%2">   
+        <div *ngSwitchCase="0" class="even">{{emp.Id}} Is Even</div>
+        <div *ngSwitchCase="1" class="odd">{{emp.Id}} Is Odd</div>
+    </div>
+</div>

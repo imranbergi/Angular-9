@@ -1,0 +1,60 @@
+<b>log-in works!</b><br/><hr/>
+<input type="radio" name="genderGrp" checked (click) = "OnLoginChange(true)"/>Customer Login
+<input type="radio" name="genderGrp" (click) = "OnLoginChange(false)"/>Employee Login
+<hr/><b>ngIf</b><br/><hr/>
+<div *ngIf="IsValid"> 
+  <app-login-customer></app-login-customer>
+</div>
+<div *ngIf="!IsValid"> 
+  <app-login-employee></app-login-employee>
+</div>
+<br/><hr/>
+<b>ngIf Complie Code</b><br/><hr/>
+<ng-template [ngIf] = "IsValid">
+    <app-login-customer></app-login-customer>
+</ng-template>
+<ng-template [ngIf] = "!IsValid">
+    <app-login-employee></app-login-employee>
+</ng-template>
+<br/><hr/>
+<b>ngIf else block</b><br/><hr/>
+<div *ngIf="IsValid; else ElseBlockTRV">
+    <app-login-customer></app-login-customer>
+</div> 
+<ng-template #ElseBlockTRV>
+    <app-login-employee></app-login-employee>
+</ng-template>
+
+<div *ngIf="IsValid else ElseBlockTRV"> 
+    <app-login-customer></app-login-customer>
+</div> 
+<ng-template #ElseBlockTRV>
+    <app-login-employee></app-login-employee>
+</ng-template>
+<br/><hr/>
+<b>ngIf else block Compile Code</b><br/><hr/>
+<ng-template [ngIf] ="IsValid" [ngIfElse] = "ElseBlockTRV"> 
+    <app-login-customer></app-login-customer>
+</ng-template> 
+<ng-template #ElseBlockTRV>
+    <app-login-employee></app-login-employee>
+</ng-template>
+<br/><hr/>
+<b>ngIf Then Block else block Code</b><br/><hr/>
+<div *ngIf="IsValid then ThenBlock else ElseBlock"></div>
+<ng-template #ThenBlock> 
+    <app-login-customer></app-login-customer>
+</ng-template> 
+<ng-template #ElseBlock>
+    <app-login-employee></app-login-employee>
+</ng-template>
+<br/><hr/>
+<b>ngIf Then Block else block Compile Code</b><br/><hr/>
+<ng-template [ngIf]="IsValid" [ngIfThen] = "ThenBlock" [ngIfElse] = ElseBlock>
+</ng-template>
+<ng-template #ThenBlock> 
+    <app-login-customer></app-login-customer>
+</ng-template> 
+<ng-template #ElseBlock>
+    <app-login-employee></app-login-employee>
+</ng-template>

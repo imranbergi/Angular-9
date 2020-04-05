@@ -1,0 +1,109 @@
+<p>ngfordirective works!</p><br />
+<hr />
+
+<!-- <div *ngFor="let emp of Employee">
+    Employee-Id = {{emp.Id}} -----Employee-Name = {{emp.Name}}}
+</div> -->
+
+<!-- Compile Code -->
+
+<!-- <ng-template ngFor let-emp [ngForOf]="Employee">
+    <div>
+        Employee-Id = {{emp.Id}} -----Employee-Name = {{emp.Name}}}
+    </div>
+</ng-template> -->
+
+<!-- <div>
+    <ul>
+        <li *ngFor="let emp of Employee; even as IsEven; odd as IsOdd;">
+            <div style="background-color: green;" *ngIf="IsEven">
+                Employee-ID = {{emp.Id}} | Name = {{emp.Name}}
+             </div>
+             <div style="background-color: hotpink;" *ngIf="IsOdd">
+                Employee-ID = {{emp.Id}} | Name = {{emp.Name}}
+             </div>
+        </li>
+    </ul>
+</div> -->
+<!-- <div *ngFor="let emp of Employee; even as IsEven; odd as IsOdd;">
+     <div style="background-color: green;" *ngIf="IsEven">
+        Employee-ID = {{emp.Id}} | Name = {{emp.Name}}
+     </div>
+     <div style="background-color: hotpink;" *ngIf="IsOdd">
+        Employee-ID = {{emp.Id}} | Name = {{emp.Name}}
+     </div> 
+</div> -->
+  
+<!-- Compile Code -->
+
+<!-- <ng-template ngFor let-emp [ngForOf]="Employee" let-IsEven="even" let-IsOdd="odd">
+     <div style="background-color: green;" *ngIf="IsEven">
+        Employee-ID = {{emp.Id}} | Name = {{emp.Name}}
+     </div>
+     <div style="background-color: hotpink;" *ngIf="IsOdd">
+        Employee-ID = {{emp.Id}} | Name = {{emp.Name}}
+     </div> 
+</ng-template> -->
+
+<!-- <div *ngFor="let emp of Employee; even as IsEven; odd as IsOdd;">
+     <div style="background-color: green;" *ngIf="IsEven">
+        Employee-ID = {{emp.Id}} | Name = {{emp.Name}}
+     </div>
+     <div style="background-color: hotpink;" *ngIf="IsOdd">
+        Employee-ID = {{emp.Id}} | Name = {{emp.Name}}
+     </div> 
+</div> -->
+
+<!-- <div *ngFor="let emp of Employee; even as IsEven; odd as IsOdd; first as FirstEle last as LastEle">
+     <div style="background-color: green;" *ngIf="FirstEle || LastEle">
+        Employee-ID = {{emp.Id}} | Name = {{emp.Name}}
+     </div>
+     <div style="background-color:yellow;" *ngIf="!FirstEle && !LastEle">
+        Employee-ID = {{emp.Id}} | Name = {{emp.Name}}
+     </div>
+     <div style="background-color: hotpink;" *ngIf="LastEle">
+        Employee-ID = {{emp.Id}} | Name = {{emp.Name}}
+     </div> 
+</div>  -->
+
+
+<!-- <div *ngFor="let emp of AllEmployee| async; even as IsEven; odd as IsOdd; first as FirstEle last as LastEle">
+     <div style="background-color: green;" *ngIf="FirstEle || LastEle">
+        Employee-ID = {{emp.Id}} | Name = {{emp.Name}}
+     </div>
+     <div style="background-color:yellow;" *ngIf="!FirstEle && !LastEle">
+        Employee-ID = {{emp.Id}} | Name = {{emp.Name}}
+     </div>
+</div>  -->
+
+<!-- Compile Code -->
+
+<!-- <ng-template ngFor let-emp [ngForOf] = "AllEmployee | async" let-FirstEle="first" let-LastEle="last">
+    <div style="background-color: green;" *ngIf="FirstEle || LastEle">
+        Employee-ID = {{emp.Id}} | Name = {{emp.Name}}
+     </div>
+     <div style="background-color:yellow;" *ngIf="!FirstEle && !LastEle">
+        Employee-ID = {{emp.Id}} | Name = {{emp.Name}}
+     </div>
+</ng-template> -->
+
+<button (click)="functionClick()">Refresh Employee</button>
+<hr/>
+<table border="1">
+   <tr>
+      <td>
+         Employee-Id
+      </td>
+      <td>
+         Employee-Name
+      </td>
+   </tr>
+   <tr *ngFor="let emp of Employee;trackBy:trackByFunction">
+      <td>
+         {{emp.Id}}
+      </td>
+      <td>
+         {{emp.Name}}
+      </td>
+   </tr>
+</table>

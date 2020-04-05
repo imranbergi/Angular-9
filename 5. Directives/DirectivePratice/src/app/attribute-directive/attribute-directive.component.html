@@ -1,0 +1,16 @@
+<p>attribute-directive works!</p><br/><hr/>
+<!-- <div [ngStyle]="{backgroundColor:myCountry == 'Canada'?'red':'green'}">
+    Hello World
+</div> -->
+
+<!-- <div *ngFor="let emp of Employee"[ngStyle]="{backgroundColor:emp.Id%2==0?'red':'green'}">
+   ID - {{emp.Id}} | {{emp.Name}}
+</div> -->
+
+<!-- <div *ngFor="let emp of Employee"[ngStyle]="{backgroundColor:emp.Id%2==0?Pink():Green()}">
+    ID - {{emp.Id}} | {{emp.Name}}
+</div> -->
+
+<div *ngFor="let emp of Employee"[ngStyle]="{backgroundColor:CountryColor(emp.Country)}">
+    ID - {{emp.Id}} | {{emp.Name}} | {{emp.Country}}
+</div>

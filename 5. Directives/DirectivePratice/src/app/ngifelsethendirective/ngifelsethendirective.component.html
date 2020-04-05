@@ -1,0 +1,15 @@
+<b>ngif then Block else Block directive working!</b><br/><hr/>
+<input type="radio" name="genderGrp" checked (click) = "onchange(true)"/>Male
+<input type="radio" name="genderGrp" (click) = "onchange(false)"/>Female
+<div *ngIf="IsValid then ThenBlock else ElseBlock"></div>
+
+<ng-template #ThenBlock>
+    <div>I m male</div>
+</ng-template>
+<ng-template #ElseBlock>
+    <div>I m Female</div>
+</ng-template>
+<br/><hr/>
+<b>ngif then Block else Block directive complie code working!</b><br/><hr/>
+<ng-template [ngIf]="IsValid" [ngIfThen]="ThenBlock" [ngIfElse]="ElseBlock">
+</ng-template>

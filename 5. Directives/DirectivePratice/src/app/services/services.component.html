@@ -1,0 +1,9 @@
+<p>services works!</p><br/><hr/>
+<!-- {{pro}} -->
+
+<div *ngIf="pro | async as msg else ELSEBLOCK">
+    {{msg}}
+</div>
+<ng-template #ELSEBLOCK>
+    Loading Data...
+</ng-template>
